@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>6Win IPTV | Teste</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--===============================================================================================-->
+    <!-- Favicons -->
+
+    <!--===============================================================================================-->
+    <link href="http://6win.tv/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link href="http://6win.tv/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link href="http://6win.tv/lib/animate/animate.min.css" rel="stylesheet">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="http://6win.tv/css/hamburgers.min.css" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="http://6win.tv/css/select2.min.css" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="http://6win.tv/css/util.css" />
+    <link rel="stylesheet" type="text/css" href="http://6win.tv/css/main.css" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="http://6win.tv/css/intlTelInput.min.css" />
+    <!--script src="https://www.google.com/recaptcha/api.js" async defer></script>-->
+</head>
+
+<body>
+    <div class="contact1">
+        <div class="container-contact1">
+            <div id="form" class="contact1-form validate-form">
+                <span class="contact1-form-title">
+                    Teste 6Win gratuito<br /><span style="font-size: 14px">Usuário e senha serão enviados para seu email
+                    </span></span>
+
+                <!-- <div class="wrap-input1 validate-input" data-validate="O nome é obrigatório">
+                        <input class="input1" type="text" name="name" placeholder="Nome" />
+                        <span class="shadow-input1"></span>
+                    </div> -->
+                <div class="wrap-input1 validate-input" data-validate="Informe um whatsapp válido">
+                    <input type="tel" id="phone" class="input1" name="whatsapp" placeholder="Whatsapp com DDD" value="<%=@wpp%>" />
+                    <span class="shadow-input1"></span>
+                </div>
+
+                <div class="wrap-input1 validate-input" data-validate="Informe um email válido">
+                    <input class="input1" type="text" name="email" placeholder="Email" value="<%=@email%>" />
+                    <span class="shadow-input1"></span>
+                </div>
+                <div class="wrap-input1 validate-input selectWrapper" data-validate="Informe um pacote">
+                    <select id="pacote" name="pack" class="input1 alidate-input selectBox">
+
+                        <option value="2">Completo + Adultos</option>
+                    </select>
+                    <span class="shadow-input1"></span>
+                </div>
+
+                <div class="container-contact1-form-btn">
+                    <button id="generateTest" class="contact1-form-btn">
+                        <span>
+                            Gerar Teste
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div id="load" class="load contact1-form validate-form" style="text-align: center;">
+                <span class="contact1-form-title">
+                    Solicitando teste
+                </span>
+                <img src="img/loading.gif" />
+            </div>
+            <div id="success" style="text-align: center;" class="contact1-form validate-form">
+                <span class="contact1-form-title">
+                    Solicitação de teste realizada! Em instantes você receberá todas as instruções no seu whatsapp
+                </span>
+                <img style="width: 80px; height: 80px; margin-bottom: 80px" src="img/test-success.png" />
+                <span class="contact1-form-title" style="font-size: 14px">
+                    Você será redirecionado para nosso whatsapp
+                </span>
+            </div>
+            <div id="whatsapp-error" style="text-align: center;" class="contact1-form validate-form">
+                <span class="contact1-form-title">
+                    Você já fez uma solicitação de teste para esse número de whatsapp
+                </span>
+                <img style="width: 80px; height: 80px;" src="img/test-error.png" />
+                <br /><br />
+                <div class="container-contact1-form-btn">
+                    <button id="generateTest" class="contact1-form-btn">
+                        <a style="font-family: Montserrat-Bold;
+                            font-size: 15px;
+                            line-height: 1.5;
+                            color: #fff;" href="http://6win.tv/teste">
+                            <span>
+                                Voltar
+                                <i class="fa fa-long-arrow-left" aria-hidden="true"></i> </span></a>
+                    </button>
+                </div>
+            </div>
+            <div id="email-error" style="text-align: center;" class="contact1-form validate-form">
+                <span class="contact1-form-title">
+                    Você já fez uma solicitação de teste para esse email
+                </span>
+                <img style="width: 80px; height: 80px;" src="img/test-error.png" />
+                <br /><br />
+                <div class="container-contact1-form-btn">
+                    <button id="generateTest" class="contact1-form-btn">
+                        <a style="font-family: Montserrat-Bold;
+                            font-size: 15px;
+                            line-height: 1.5;
+                            color: #fff;" href="http://6win.tv/teste">
+                            <span>
+                                Voltar
+                                <i class="fa fa-long-arrow-left" aria-hidden="true"></i> </span></a>
+                    </button>
+                </div>
+            </div>
+            <div id="maintence-error" style="text-align: center;" class="contact1-form validate-form">
+                <span class="contact1-form-title">
+                    Nosso sistema está em manutenção! Tente novamente mais tarde
+                </span>
+                <img style="width: 110px; height: 110px;" src="img/test-maintence.png" />
+                <br /><br />
+                <div class="container-contact1-form-btn">
+                    <button id="generateTest" class="contact1-form-btn">
+                        <a style="font-family: Montserrat-Bold;
+                            font-size: 15px;
+                            line-height: 1.5;
+                            color: #fff;" href="http://6win.tv/teste">
+                            <span>
+                                Voltar
+                                <i class="fa fa-long-arrow-left" aria-hidden="true"></i> </span></a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--===============================================================================================-->
+    <script src="http://6win.tv/lib/jquery/jquery.min.js"></script>
+    <!--================================================================================================-->
+    <script src="http://6win.tv/lib/bootstrap/js/popper.min.js"></script>
+    <script src="http://6win.tv/lib/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="http://6win.tv/lib/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="http://6win.tv/lib/tilt/tilt.jquery.min.js"></script>
+    <script>
+        $('.js-tilt').tilt({
+            scale: 1.1
+        });
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-23581568-13');
+    </script>
+
+
+
+
+    <!--===============================================================================================-->
+
+    
+    <script src="http://6win.tv/js/main.min.js"></script>
+</body>
+
+</html>

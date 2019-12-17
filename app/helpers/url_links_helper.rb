@@ -1,0 +1,2 @@
+module UrlLinksHelper
+end
