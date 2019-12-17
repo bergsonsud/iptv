@@ -1,3 +1,6 @@
+
+<% if Mail.count >0 %>
+
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
@@ -23,6 +26,11 @@
 
 <% if TimeDifference.between(DateTime.now, @mail.expired).in_minutes <=0 %>
 
-<%= button_to "Solicitar", solicita_mails_path, :id => "open-contacts-dialog-btn",
+<%= button_to "Solicitar", solicita_teste_mails_path, :id => "open-contacts-dialog-btn",
       :class => "inbox-sf-add-btn tip", :method => :get %>
 <%end%>      
+
+<%else%>
+<%= button_to "Solicitar", solicita_teste_mails_path, :id => "open-contacts-dialog-btn",
+      :class => "inbox-sf-add-btn tip", :method => :get %>
+<%end%>

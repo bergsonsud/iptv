@@ -13,7 +13,9 @@ class MailsController < ApplicationController
   def show
   end
 
-
+  def get_lista
+    redirect_to UrlLink.last.url
+  end
 
 
   def create_mail 
@@ -33,6 +35,7 @@ class MailsController < ApplicationController
   end
 
  def check()
+    render html: "<script>alert('Lista atualizada - Favor atualizar canais na TV')</script>".html_safe
     inbox = nil
     lista = GuerrillaMail.new(Mail.last.email)
     puts("Ultimo gravado")
@@ -67,8 +70,8 @@ class MailsController < ApplicationController
 
     link = Nokogiri::HTML(msg.to_s).search('span')[2].xpath('string(.)')
     puts(link)
-    LinkUrl.delete_all
-    l = LinkUrl.new(url: link)
+    UrlLink.delete_all
+    l = UrlLink.new(url: link)
     l.save
 
   end
