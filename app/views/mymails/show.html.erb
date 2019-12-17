@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @mymail.email %>
+</p>
+
+<p>
+  <strong>Expired:</strong>
+  <%= @mymail.expired %>
+</p>
+
+<%= link_to 'Edit', edit_mymail_path(@mymail) %> |
+<%= link_to 'Back', mymails_path %>

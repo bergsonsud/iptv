@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :url_links
-  resources :mails do
+  resources :mymails do
     collection do       
       get :solicita_teste  
       get :solicita    

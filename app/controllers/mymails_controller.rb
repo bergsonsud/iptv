@@ -1,19 +1,21 @@
-class MailsController < ApplicationController
-  before_action :set_mail, only: [:show, :edit, :update, :destroy]
+class MymailsController < ApplicationController
+  before_action :set_mymail, only: [:show, :edit, :update, :destroy]
   before_action :create_mail, only: [:solicita_teste]
 
-  # GET /mails
-  # GET /mails.json
+  # GET /mymails
+  # GET /mymails.json
   def index
-    @mails = Mail.all
+    @mymails = Mymail.all
   end
 
-  # GET /mails/1
-  # GET /mails/1.json
+  # GET /mymails/1
+  # GET /mymails/1.json
   def show
   end
 
-  def get_lista
+
+
+def get_lista
     redirect_to UrlLink.last.url
   end
 
@@ -30,16 +32,16 @@ class MailsController < ApplicationController
     puts("Solicitando teste para")
     puts(@email)
 
-    m = Mail.new(email: @g['email_addr'], expired: 6.hours.from_now)
+    m = Mymail.new(email: @g['email_addr'], expired: 6.hours.from_now)
     m.save
   end
 
  def check()
     render html: "<script>alert('Lista atualizada - Favor atualizar canais na TV')</script>".html_safe
     inbox = nil
-    lista = GuerrillaMail.new(Mail.last.email)
+    lista = GuerrillaMail.new(Mymail.last.email)
     puts("Ultimo gravado")
-    puts(Mail.last.email)
+    puts(Mymail.last.email)
 
 
 
@@ -75,65 +77,63 @@ class MailsController < ApplicationController
     l.save
 
   end
-
-
-  # GET /mails/new
+  # GET /mymails/new
   def new
-    @mail = Mail.new
+    @mymail = Mymail.new
   end
 
-  # GET /mails/1/edit
+  # GET /mymails/1/edit
   def edit
   end
 
-  # POST /mails
-  # POST /mails.json
+  # POST /mymails
+  # POST /mymails.json
   def create
-    @mail = Mail.new(mail_params)
+    @mymail = Mymail.new(mymail_params)
 
     respond_to do |format|
-      if @mail.save
-        format.html { redirect_to @mail, notice: 'Mail was successfully created.' }
-        format.json { render :show, status: :created, location: @mail }
+      if @mymail.save
+        format.html { redirect_to @mymail, notice: 'Mymail was successfully created.' }
+        format.json { render :show, status: :created, location: @mymail }
       else
         format.html { render :new }
-        format.json { render json: @mail.errors, status: :unprocessable_entity }
+        format.json { render json: @mymail.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /mails/1
-  # PATCH/PUT /mails/1.json
+  # PATCH/PUT /mymails/1
+  # PATCH/PUT /mymails/1.json
   def update
     respond_to do |format|
-      if @mail.update(mail_params)
-        format.html { redirect_to @mail, notice: 'Mail was successfully updated.' }
-        format.json { render :show, status: :ok, location: @mail }
+      if @mymail.update(mymail_params)
+        format.html { redirect_to @mymail, notice: 'Mymail was successfully updated.' }
+        format.json { render :show, status: :ok, location: @mymail }
       else
         format.html { render :edit }
-        format.json { render json: @mail.errors, status: :unprocessable_entity }
+        format.json { render json: @mymail.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /mails/1
-  # DELETE /mails/1.json
+  # DELETE /mymails/1
+  # DELETE /mymails/1.json
   def destroy
-    @mail.destroy
+    @mymail.destroy
     respond_to do |format|
-      format.html { redirect_to mails_url, notice: 'Mail was successfully destroyed.' }
+      format.html { redirect_to mymails_url, notice: 'Mymail was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_mail
-      @mail = Mail.find(params[:id])
+    def set_mymail
+      @mymail = Mymail.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def mail_params
-      params.require(:mail).permit(:email, :expired)
+    def mymail_params
+      params.require(:mymail).permit(:email, :expired)
     end
 end

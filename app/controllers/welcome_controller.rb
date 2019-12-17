@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
 	def index
-		@mail = Mail.all.last
+		@mail = Mymail.all.last
 	end
 end

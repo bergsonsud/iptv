@@ -1,0 +1,2 @@
+class Mymail < ApplicationRecord
+end
