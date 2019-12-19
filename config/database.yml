@@ -78,13 +78,14 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
+production2:
   <<: *default
   database: iptv_production
   username: iptv
   password: <%= ENV['IPTV_DATABASE_PASSWORD'] %>
 
-production2:
+
+production:
   adapter: postgresql
   encoding: unicode
   database: iptv_production 

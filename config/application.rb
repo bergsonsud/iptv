@@ -14,13 +14,13 @@ module Iptv
 
 
     #config.load_defaults 5.2
-    config.assets.paths << Rails.root.join("iptv", "assets", "fonts")
-    config.assets.paths << Rails.root.join("iptv", "assets", "images")
-    config.assets.paths << Rails.root.join("iptv", "assets", "bootstrap")
-    config.assets.paths << Rails.root.join("iptv", "assets", "rs-plugin-5")
-    config.assets.paths << Rails.root.join("iptv", "assets", "magnific-popup")
-    config.assets.paths << Rails.root.join("iptv", "assets", "owlcarousel2")
-    config.assets.paths << Rails.root.join("iptv", "assets", "morphext")
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.paths << Rails.root.join("app", "assets", "images")
+    config.assets.paths << Rails.root.join("app", "assets", "bootstrap")
+    config.assets.paths << Rails.root.join("app", "assets", "rs-plugin-5")
+    config.assets.paths << Rails.root.join("app", "assets", "magnific-popup")
+    config.assets.paths << Rails.root.join("app", "assets", "owlcarousel2")
+    config.assets.paths << Rails.root.join("app", "assets", "morphext")
 
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components', 'gentelella', 'production')
 
