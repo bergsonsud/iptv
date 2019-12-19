@@ -83,3 +83,12 @@ production:
   database: iptv_production
   username: iptv
   password: <%= ENV['IPTV_DATABASE_PASSWORD'] %>
+
+production2:
+  adapter: postgresql
+  encoding: unicode
+  database: iptv_production 
+  username: bergson 
+  password: 30071991
+  host: localhost
+  pool: 5  
