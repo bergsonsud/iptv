@@ -206,8 +206,8 @@
                 pack: t(s).val(),
                 tenant: "6win"
             };
-            // t("#form").hide(),
-            // t("#load").show(),
+            t("#form").hide(),
+            t("#load").show(),
             t.ajax({
                 url: "http://6win.tv:8080/api/line-tests",
                 type: "POST",
@@ -216,8 +216,8 @@
                 data: JSON.stringify(a),
                 success: function(e) {
                     t("#load").hide(),
-                    t("#success").show(),
-                    window.location.href = "https://api.whatsapp.com/send?phone=351930438390&text=Ol%C3%A1,%20vim%20pelo%20site%206Win%20IPTV.%20Estou%20aguardando%20meu%20teste"
+                    t("#success").show()
+                   // window.location.href = "https://api.whatsapp.com/send?phone=351930438390&text=Ol%C3%A1,%20vim%20pelo%20site%206Win%20IPTV.%20Estou%20aguardando%20meu%20teste"
                 },
                 error: function(e) {
                     var a = e.responseJSON.errorKey;
