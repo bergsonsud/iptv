@@ -11,7 +11,7 @@ module Iptv
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
     config.serve_static_assets = true
-
+    #config.assets.precompile += %w( teste.css )
 
     #config.load_defaults 5.2
     # config.assets.paths << Rails.root.join("app", "assets", "fonts")
