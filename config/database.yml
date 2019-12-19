@@ -84,7 +84,6 @@ production:
   username: iptv
   password: <%= ENV['IPTV_DATABASE_PASSWORD'] %>
 
-
 production2:
   adapter: postgresql
   encoding: unicode

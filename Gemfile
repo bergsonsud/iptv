@@ -52,6 +52,14 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+
+group :assets do
+  gem 'therubyracer'
+  gem 'sass-rails', '~> 5.0'
+  gem 'coffee-rails', '~> 4.2'
+  gem 'uglifier', '>= 1.3.0'
+end
+
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'

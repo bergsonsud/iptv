@@ -12,6 +12,7 @@ module Iptv
     config.load_defaults 5.2
     config.serve_static_assets = true
     #config.assets.precompile += %w( teste.css )
+    config.assets.js_compressor = Uglifier.new(compress: { reduce_vars: false, collapse_vars: false })
 
     #config.load_defaults 5.2
     # config.assets.paths << Rails.root.join("app", "assets", "fonts")
