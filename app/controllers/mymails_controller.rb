@@ -50,7 +50,7 @@ def get_lista
     sleep 10
     i = 0
     loop do
-      sleep 20
+      sleep 2
       i += 1
       puts i
 
@@ -61,7 +61,7 @@ def get_lista
         break       # this will cause execution to exit the loop
       end
 
-      if i == 5
+      if i == 2
         break
       end
     end
