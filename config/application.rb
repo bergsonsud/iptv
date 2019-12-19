@@ -14,15 +14,15 @@ module Iptv
 
 
     #config.load_defaults 5.2
-    config.assets.paths << Rails.root.join("app", "assets", "fonts")
-    config.assets.paths << Rails.root.join("app", "assets", "images")
-    config.assets.paths << Rails.root.join("app", "assets", "bootstrap")
-    config.assets.paths << Rails.root.join("app", "assets", "rs-plugin-5")
-    config.assets.paths << Rails.root.join("app", "assets", "magnific-popup")
-    config.assets.paths << Rails.root.join("app", "assets", "owlcarousel2")
-    config.assets.paths << Rails.root.join("app", "assets", "morphext")
+    # config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    # config.assets.paths << Rails.root.join("app", "assets", "images")
+    # config.assets.paths << Rails.root.join("app", "assets", "bootstrap")
+    # config.assets.paths << Rails.root.join("app", "assets", "rs-plugin-5")
+    # config.assets.paths << Rails.root.join("app", "assets", "magnific-popup")
+    # config.assets.paths << Rails.root.join("app", "assets", "owlcarousel2")
+    # config.assets.paths << Rails.root.join("app", "assets", "morphext")
 
-    config.assets.paths << Rails.root.join('vendor', 'assets', 'components', 'gentelella', 'production')
+    # config.assets.paths << Rails.root.join('vendor', 'assets', 'components', 'gentelella', 'production')
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
