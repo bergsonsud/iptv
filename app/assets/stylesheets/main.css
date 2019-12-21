@@ -504,12 +504,12 @@ textarea.input1 + .shadow-input1 {
 }
 
 .iti-flag {
-    background-image: url('../lib/intl-tel-input/build/img/flags@2x.png');
+    background-image: url('http://6win.tv/lib/intl-tel-input/img/flags@2x.png');
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     .iti-flag {
-        background-image: url('../lib/intl-tel-input/build/img/flags@2x.png');
+        background-image: url('http://6win.tv/lib/intl-tel-input/img/flags@2x.png');
     }
 }
 
