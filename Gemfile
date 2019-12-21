@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'guerrillamail'
 gem 'time_difference', '~> 0.7.0'
+gem 'jquery-rails'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
@@ -53,12 +54,12 @@ group :development do
 end
 
 
-group :assets do
-  gem 'therubyracer'
-  gem 'sass-rails', '~> 5.0'
-  gem 'coffee-rails', '~> 4.2'
-  gem 'uglifier', '>= 1.3.0'
-end
+# group :assets do
+#   gem 'therubyracer'
+#   gem 'sass-rails', '~> 5.0'
+#   gem 'coffee-rails', '~> 4.2'
+#   gem 'uglifier', '>= 1.3.0'
+# end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
