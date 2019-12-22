@@ -15,10 +15,13 @@ class MymailsController < ApplicationController
 
 
 
-def get_lista
-    redirect_to UrlLink.last.url
+  def get_lista
+    if Mymail.last.expired- DateTime.now <=0
+      redirect_to root_path
+    else
+      redirect_to UrlLink.last.url
+    end
   end
-
 
   def create_mail 
     @g = GuerrillaMail.new if @g.nil?
@@ -32,6 +35,7 @@ def get_lista
     puts("Solicitando teste para")
     puts(@email)
 
+    Mymail.delete_all
     m = Mymail.new(email: @g['email_addr'], expired: 6.hours.from_now)
     m.save
   end

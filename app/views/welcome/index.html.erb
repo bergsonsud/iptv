@@ -1,5 +1,5 @@
 
-<% if Mymail.count >0 %>
+<% if Mymail.count >0 and @mail.expired- DateTime.now >0%>
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
@@ -17,20 +17,21 @@
   <tr>
     <td class="tg-ps66"><%=@mail.created_at-3.hours%></td>
     <td class="tg-ps66"><%=@mail.expired-3.hours%></td>
+    <% if @mail.expired- DateTime.now <=0 %>
+    <td></td>
+    <td></td>
+    <%else%>
     <td class="tg-ps66"><%=TimeDifference.between(DateTime.now, @mail.expired).in_hours%> horas</td>
     <td class="tg-ps66"><%=TimeDifference.between(DateTime.now, @mail.expired).in_minutes%> minutos</td>
-
+    <%end%>
   </tr>
 </table>
 <br>
 
-<% if TimeDifference.between(DateTime.now, @mail.expired).in_minutes <=0 %>
-
-<%= button_to "Solicitar", solicita_teste_mymails_path, :id => "open-contacts-dialog-btn",
-      :class => "inbox-sf-add-btn tip", :method => :get %>
-<%end%>      
-
-<%else%>
-<%= button_to "Solicitar", solicita_teste_mymails_path, :id => "open-contacts-dialog-btn",
-      :class => "inbox-sf-add-btn tip", :method => :get %>
 <%end%>
+
+<% if @mail.expired- DateTime.now <=0  or Mymail.count ==0%>
+
+<%= button_to "Solicitar", solicita_teste_mymails_path, :id => "open-contacts-dialog-btn",
+      :class => "inbox-sf-add-btn tip", :method => :get %>
+<%end%>  
